@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Abyss Watcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --void:  #02000a;
+      --surface: #0a0516;
+      --border: #2a1550;
+      --glow:  #7b2fff;
+      --glow2: #a855f7;
+      --eye:   #c084fc;
+      --text:  #e8d5ff;
+      --muted: #8b6db0;
+      --dim:   #4a3570;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(192,132,252,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 70%, rgba(123,47,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 20%, rgba(192,132,252,0.2) 0%, transparent 100%),
+        radial-gradient(ellipse at 50% 0%, rgba(123,47,255,0.08) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(2,0,10,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(168,85,247,0.15);
+    }
+    .nav-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.1rem; color: var(--eye);
+      letter-spacing: 2px; text-shadow: 0 0 20px var(--glow);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.95rem; font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--eye); text-shadow: 0 0 12px var(--glow); }
+
+    main {
+      position: relative; z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 120px 2rem 80px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .page-header .label {
+      font-size: 0.8rem; letter-spacing: 4px;
+      color: var(--muted); text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+      text-shadow: 0 0 30px var(--glow), 0 0 60px rgba(123,47,255,0.3);
+      margin-bottom: 12px;
+    }
+    .page-header .updated { font-size: 0.9rem; color: var(--dim); }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--glow2), transparent);
+      margin: 40px 0;
+    }
+
+    .section {
+      background: rgba(10,5,22,0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: border-color 0.3s;
+    }
+    .section:hover { border-color: rgba(168,85,247,0.3); }
+
+    .section h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1rem; color: var(--eye);
+      letter-spacing: 1px; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px; height: 18px;
+      background: var(--glow); border-radius: 2px; flex-shrink: 0;
+    }
+
+    .section p { color: var(--text); margin-bottom: 12px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul { list-style: none; padding: 0; }
+    .section ul li {
+      color: var(--text); padding: 6px 0 6px 20px; position: relative;
+    }
+    .section ul li::before { content: '▸'; position: absolute; left: 0; color: var(--glow2); }
+
+    .highlight {
+      background: rgba(123,47,255,0.1);
+      border: 1px solid rgba(123,47,255,0.2);
+      border-radius: 8px; padding: 16px 20px; margin-top: 12px;
+      color: var(--eye); font-size: 0.95rem;
+    }
+
+    .data-table {
+      width: 100%; border-collapse: collapse; margin-top: 16px;
+    }
+    .data-table th {
+      background: rgba(123,47,255,0.15);
+      color: var(--eye); padding: 10px 16px;
+      text-align: left; font-family: 'Cinzel Decorative', serif;
+      font-size: 0.8rem; letter-spacing: 1px;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 10px 16px; color: var(--text);
+      border-bottom: 1px solid rgba(42,21,80,0.5);
+      font-size: 0.95rem;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(123,47,255,0.05); }
+
+    a { color: var(--glow2); text-decoration: none; }
+    a:hover { color: var(--eye); text-decoration: underline; }
+
+    footer {
+      position: relative; z-index: 1;
+      text-align: center; padding: 40px 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--dim); font-size: 0.9rem;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--eye); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      main { padding: 100px 1.2rem 60px; }
+      .section { padding: 22px 18px; }
+      .nav-links { gap: 1.2rem; }
+      .data-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ABYSS WATCHER</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="terms.html">Terms of Service</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: May 27, 2026</div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>1. Overview</h2>
+    <p>Abyss Watcher ("we", "us", "the bot") is committed to protecting your privacy. This Privacy Policy explains what data we collect, how we use it, and your rights regarding that data.</p>
+    <p>By using Abyss Watcher, you consent to the data practices described in this policy.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Data We Collect</h2>
+    <p>Abyss Watcher only collects data that is necessary to provide its features. The following data is stored in our database:</p>
+    <table class="data-table">
+      <tr>
+        <th>Data Type</th>
+        <th>What We Store</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td>Discord User ID</td>
+        <td>Your unique Discord ID number</td>
+        <td>Identifying your economy profile</td>
+      </tr>
+      <tr>
+        <td>Discord Server ID</td>
+        <td>The server's unique ID number</td>
+        <td>Separating per-server economies</td>
+      </tr>
+      <tr>
+        <td>Economy Data</td>
+        <td>Balance, items, gear, stats, quests</td>
+        <td>Core bot functionality</td>
+      </tr>
+      <tr>
+        <td>Vote History</td>
+        <td>Last vote timestamp, vote streak</td>
+        <td>Vote reward system</td>
+      </tr>
+      <tr>
+        <td>Command Usage</td>
+        <td>Command counter per user</td>
+        <td>Analytics and rank tracking</td>
+      </tr>
+    </table>
+    <div class="highlight">
+      🔒 We do NOT collect: message content, usernames, email addresses, IP addresses, or any personal information beyond what Discord provides via its bot API.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. How We Use Your Data</h2>
+    <p>All collected data is used exclusively to provide Abyss Watcher's features:</p>
+    <ul>
+      <li>Storing and retrieving your in-game economy progress</li>
+      <li>Processing commands and returning appropriate responses</li>
+      <li>Tracking quests, cooldowns, and vote rewards</li>
+      <li>Maintaining server-wide settings and leaderboards</li>
+    </ul>
+    <p>We do not sell, rent, share, or monetize your data in any way. Your data is never used for advertising or shared with third parties.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Data Storage & Security</h2>
+    <p>Your data is stored in a MongoDB database hosted on secure cloud infrastructure. We use industry-standard security practices to protect your data including:</p>
+    <ul>
+      <li>Encrypted database connections (TLS/SSL)</li>
+      <li>Access restricted to bot infrastructure only</li>
+      <li>No sensitive personal data is stored</li>
+      <li>Regular security reviews</li>
+    </ul>
+    <p>However, no system is 100% secure. We cannot guarantee absolute security of data transmitted over the internet.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Data Retention</h2>
+    <p>Your data is retained as long as you or your server use Abyss Watcher. Specifically:</p>
+    <ul>
+      <li><strong>Server data</strong> is retained while the bot remains in your server</li>
+      <li><strong>User data</strong> is retained unless you request deletion</li>
+      <li>Data may be automatically purged after extended periods of inactivity (12+ months)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Your Rights & Data Deletion</h2>
+    <p>You have the right to request deletion of your personal data at any time. To delete your data:</p>
+    <ul>
+      <li>Join our support server and open a data deletion request</li>
+      <li>Your economy profile (all items, balance, progress) will be permanently deleted</li>
+      <li>This action is irreversible</li>
+    </ul>
+    <p>Server owners can also request deletion of all server-related data by removing the bot and contacting support.</p>
+    <div class="highlight">
+      📬 To request data deletion, contact us via our support server: <a href="https://discord.gg/YOUR_INVITE" target="_blank">discord.gg/abysswatcher</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>7. Third-Party Services</h2>
+    <p>Abyss Watcher interacts with the following third-party services:</p>
+    <ul>
+      <li><strong>Discord</strong> — Bot platform. Subject to <a href="https://discord.com/privacy" target="_blank">Discord's Privacy Policy</a></li>
+      <li><strong>top.gg</strong> — Bot listing and vote tracking. Subject to <a href="https://top.gg/privacy" target="_blank">top.gg's Privacy Policy</a></li>
+      <li><strong>MongoDB Atlas</strong> — Database hosting. Subject to <a href="https://www.mongodb.com/legal/privacy-policy" target="_blank">MongoDB's Privacy Policy</a></li>
+      <li><strong>Railway</strong> — Bot hosting infrastructure. Subject to <a href="https://railway.app/legal/privacy" target="_blank">Railway's Privacy Policy</a></li>
+    </ul>
+    <p>We are not responsible for the privacy practices of these third-party services.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Children's Privacy</h2>
+    <p>Abyss Watcher is not directed at children under the age of 13. We do not knowingly collect data from children under 13. If you believe a child under 13 has used the bot, please contact us so we can delete their data.</p>
+    <p>Use of Abyss Watcher is subject to Discord's minimum age requirements.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be reflected by the "Last updated" date at the top of this page. Continued use of Abyss Watcher after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Contact</h2>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us through our official support server.</p>
+    <div class="highlight">
+      🌑 Support Server: <a href="https://discord.gg/Vu9SpNaV9x" target="_blank">discord.gg/abysswatcher</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p style="text-align:center; color:var(--dim); font-size:0.9rem;">
+    Your privacy matters to us. We only collect what we need to make the bot work.
+  </p>
+</main>
+
+<footer>
+  <p>© 2026 Abyss Watcher &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
